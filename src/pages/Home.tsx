@@ -12,7 +12,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="hero-text">Mechanical Design Engineer</span>
+                <span className="hero-text">Mohd Aamir Suhail</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Transforming innovative concepts into precision-engineered solutions using 

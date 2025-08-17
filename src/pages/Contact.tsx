@@ -31,19 +31,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "engineer@example.com",
-      href: "mailto:engineer@example.com"
+      value: "aamir.ms.suhail@fau.de",
+      href: "mailto:aamir.ms.suhail@fau.de.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+49 15510015428",
+      href: "tel:+4915510015428"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Nürnberg, Bavaria, Germany",
       href: "#"
     }
   ];
@@ -52,19 +52,19 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
+      href: "http://linkedin.com/in/mohd-aamir-suhail",
       color: "hover:text-blue-600"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/yourprofile",
+      href: "https://https://github.com/suhail-mohd-aamir",
       color: "hover:text-gray-900"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:engineer@example.com",
+      href: "mailto:aamir.ms.suhai@fau.de",
       color: "hover:text-red-600"
     }
   ];
@@ -79,7 +79,7 @@ const Contact = () => {
               <span className="hero-text">Get In Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Ready to discuss your next mechanical design project? Let's connect and explore how we can work together.
+              I’m open to exciting opportunities in mechanical design. Let’s connect and discuss how I can contribute to your organization
             </p>
           </div>
         </div>
@@ -90,103 +90,7 @@ const Contact = () => {
         <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <Card className="card-hover">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold mb-6 text-foreground">Send a Message</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="form-field">
-                        <Label htmlFor="firstName" className="text-foreground">First Name</Label>
-                        <Input
-                          id="firstName"
-                          name="firstName"
-                          type="text"
-                          required
-                          className="mt-1"
-                          placeholder="Your first name"
-                        />
-                      </div>
-                      <div className="form-field">
-                        <Label htmlFor="lastName" className="text-foreground">Last Name</Label>
-                        <Input
-                          id="lastName"
-                          name="lastName"
-                          type="text"
-                          required
-                          className="mt-1"
-                          placeholder="Your last name"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="form-field">
-                      <Label htmlFor="email" className="text-foreground">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        className="mt-1"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                    
-                    <div className="form-field">
-                      <Label htmlFor="company" className="text-foreground">Company (Optional)</Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        type="text"
-                        className="mt-1"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    
-                    <div className="form-field">
-                      <Label htmlFor="subject" className="text-foreground">Subject</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        required
-                        className="mt-1"
-                        placeholder="Project inquiry, collaboration, etc."
-                      />
-                    </div>
-                    
-                    <div className="form-field">
-                      <Label htmlFor="message" className="text-foreground">Message</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={5}
-                        className="mt-1"
-                        placeholder="Tell me about your project requirements, timeline, and how I can help..."
-                      />
-                    </div>
-                    
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full btn-glow shadow-glow"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin mr-2 h-4 w-4 border-2 border-primary-foreground border-t-transparent rounded-full"></div>
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-4 w-4" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              
 
               {/* Contact Information */}
               <div className="space-y-8">
@@ -248,9 +152,7 @@ const Contact = () => {
                   <CardContent className="p-8">
                     <h2 className="text-2xl font-bold mb-4 text-foreground">Response Time</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      I typically respond to all inquiries within 24 hours during business days. 
-                      For urgent project discussions, feel free to reach out via phone or LinkedIn 
-                      for faster response.
+                      I am always open to professional opportunities and typically reply within a day during the weeks and I’m also available via LinkedIn for quick communication.
                     </p>
                   </CardContent>
                 </Card>

@@ -5,44 +5,43 @@ import { Download, Award, Briefcase, GraduationCap } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { category: "CAD Software", items: ["CATIA V5", "Siemens NX", "SolidWorks", "AutoCAD", "Inventor"] },
-    { category: "Analysis & Simulation", items: ["ANSYS", "ABAQUS", "SolidWorks Simulation", "NX Nastran", "MATLAB"] },
-    { category: "Design Expertise", items: ["Mechanical Systems", "Product Development", "DFM/DFA", "GD&T", "Tolerancing"] },
-    { category: "Manufacturing", items: ["CNC Machining", "Sheet Metal", "Injection Molding", "Welding", "Assembly"] },
+    { category: "CAD Software", items: ["CATIA V5", "Siemens NX", "SolidWorks", "AutoCAD",] },
+    { category: "Analysis & Simulation", items: ["ANSYS", "SolidWorks Simulation", "MATLAB"] },
+    { category: "Design Expertise", items: ["Mechanical Systems", "Product Development", "DFM/DFA", "GD&T"] },
+    { category: "Manufacturing", items: ["CNC Machining", "Sheet Metal", "Injection Molding","Additive Manufacturing", "Welding", "Assembly"] },
   ];
 
   const experience = [
     {
-      title: "Senior Mechanical Design Engineer",
-      company: "Advanced Manufacturing Corp",
-      period: "2020 - Present",
-      description: "Lead mechanical design for automated manufacturing systems, overseeing projects from concept to production.",
+      title: "Product Engineer",
+      company: "ANAND Group https://www.anandgroupindia.com › SitesGabriel India",
+      period: "2020 - 2021",
+      description: "Experience in operating CNC and robotic machines within production, supporting the transition from design to manufacturing",
       achievements: [
-        "Designed 15+ production-ready mechanical systems",
-        "Reduced manufacturing costs by 25% through design optimization",
-        "Mentored junior engineers and led cross-functional teams"
+        "Worked on the suspension system design for Hyundai Brio and Maruti Suzuki Brezza",
+        "Awarded Employee of the Month for effective contributions to production efficiency in the milling process.",
+        "Contributed to cross-functional teamwork, bridging design, production, and quality assurance"
       ]
     },
     {
-      title: "Mechanical Design Engineer",
-      company: "Precision Engineering Solutions",
-      period: "2017 - 2020",
-      description: "Developed precision mechanical components for aerospace and automotive industries.",
+      title: "Mechanical Design Intern",
+      company: "Mahindra Automobiles",
+      period: "2012 - 2023",
+      description: "Developed precision mechanical components for the automotive industry, focusing Door Glass Supporter systems.",
       achievements: [
-        "Improved component performance by 30% through advanced modeling",
-        "Successfully delivered 20+ complex design projects on time",
-        "Implemented new design standards and workflows"
+        "Designed the door glass supporter using CATIA V5, ensuring precise geometry and alignment",
+        "Dimensional Accuracy: Applied GD&T standards to guarantee fit, durability, and reliability",
       ]
     },
     {
-      title: "Junior Design Engineer",
+      title: "Industry-Supported Project – FAPS (FAU) with Audi",
       company: "Innovation Dynamics",
-      period: "2015 - 2017",
-      description: "Supported senior engineers in product development and design validation processes.",
+      period: "2024-2025",
+      description: "Product Development Support: Assisted senior engineers in product development and design validation processes.",
       achievements: [
-        "Contributed to 10+ successful product launches",
-        "Gained expertise in multiple CAD platforms",
-        "Developed strong foundation in design for manufacturing"
+        "Material Study: Conducted material analysis to evaluate suitability for automotive applications",
+        "Automation Design: Contributed to the design of a robotic work cell and assembly line layout for production optimization.",
+
       ]
     }
   ];
@@ -51,8 +50,8 @@ const About = () => {
     "Certified SOLIDWORKS Professional (CSWP)",
     "CATIA V5 Advanced Certification",
     "Siemens NX Certified Professional",
-    "Six Sigma Green Belt",
-    "Project Management Professional (PMP)"
+    "Autocad",
+
   ];
 
   return (
@@ -65,7 +64,7 @@ const About = () => {
               <span className="hero-text">About Me</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Passionate mechanical design engineer with 8+ years of experience transforming innovative concepts into precision-engineered solutions
+              Passionate mechanical design engineer with +1 years of experience transforming innovative concepts into precision-engineered solutions
             </p>
           </div>
         </div>
@@ -179,14 +178,14 @@ const About = () => {
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-foreground">Master of Science in Mechanical Engineering</h4>
-                      <p className="text-primary">Stanford University</p>
-                      <p className="text-sm text-muted-foreground">2013 - 2015</p>
+                      <h4 className="font-semibold text-foreground">Master in Elektromobilität-ACES</h4>
+                      <p className="text-primary">Friedrich-Alexander-Universität Erlangen-Nürnberg</p>
+                      <p className="text-sm text-muted-foreground">2022-2025</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">Bachelor of Science in Mechanical Engineering</h4>
-                      <p className="text-primary">University of California, Berkeley</p>
-                      <p className="text-sm text-muted-foreground">2009 - 2013</p>
+                      <h4 className="font-semibold text-foreground">Bachelor of Technology Automobile Engineering</h4>
+                      <p className="text-primary">Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal</p>
+                      <p className="text-sm text-muted-foreground">2018-2021</p>
                     </div>
                   </div>
                 </CardContent>
@@ -222,7 +221,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Work Together?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Let's discuss how my expertise can contribute to your next mechanical design project
+              I’m eager to apply my skills to real-world engineering projects — let’s connect and explore how I can support your organization
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="btn-glow shadow-glow">
