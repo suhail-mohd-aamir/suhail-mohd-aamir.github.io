@@ -26,7 +26,7 @@ const About = () => {
     {
       title: "Mechanical Design Intern",
       company: "Mahindra Automobiles",
-      period: "2012 - 2023",
+      period: "2022 - 2023",
       description: "Developed precision mechanical components for the automotive industry, focusing Door Glass Supporter systems.",
       achievements: [
         "Designed the door glass supporter using CATIA V5, ensuring precise geometry and alignment",
