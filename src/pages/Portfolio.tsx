@@ -1,57 +1,28 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PlaceholderModel } from "@/components/ModelViewer";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Precision Gearbox Assembly",
+      title: "Disk Brake",
       description: "Multi-stage planetary gearbox designed for high-torque industrial applications. Features optimized gear ratios and integrated lubrication system.",
       software: ["CATIA V5", "SolidWorks"],
       category: "Mechanical Systems",
-      modelUrl: "", // Would contain actual .obj file path
+      image: 'public/images/diskbrake.jpg',
+      modelUrl: "/detail/3", // Would contain actual .obj file path
     },
     {
       id: 2,
-      title: "Hydraulic Actuator System",
-      description: "Compact hydraulic actuation system with integrated pressure control and position feedback. Designed for precision manufacturing equipment.",
-      software: ["Siemens NX", "CATIA V5"],
-      category: "Fluid Systems",
-      modelUrl: "", // Would contain actual .obj file path
-    },
-    {
-      id: 3,
-      title: "Automotive Suspension Component",
-      description: "Advanced MacPherson strut assembly with optimized spring rates and damping characteristics for improved vehicle dynamics.",
-      software: ["SolidWorks", "CATIA V5"],
-      category: "Automotive",
-      modelUrl: "", // Would contain actual .obj file path
-    },
-    {
-      id: 4,
-      title: "Robotic Joint Mechanism",
-      description: "6-DOF robotic joint with integrated servo motors and position encoders. Designed for industrial automation applications.",
-      software: ["Siemens NX", "SolidWorks"],
-      category: "Robotics",
-      modelUrl: "", // Would contain actual .obj file path
-    },
-    {
-      id: 5,
-      title: "Heat Exchanger Design",
-      description: "Shell-and-tube heat exchanger optimized for maximum thermal efficiency while maintaining compact form factor.",
-      software: ["CATIA V5"],
-      category: "Thermal Systems",
-      modelUrl: "", // Would contain actual .obj file path
-    },
-    {
-      id: 6,
-      title: "Precision Machining Fixture",
-      description: "Modular workholding fixture system designed for high-precision CNC machining operations with quick changeover capability.",
-      software: ["SolidWorks", "Siemens NX"],
-      category: "Manufacturing",
-      modelUrl: "", // Would contain actual .obj file path
-    },
+      title: "4 Cylinder Engine",
+      description: "Multi-stage planetary gearbox designed for high-torque industrial applications. Features optimized gear ratios and integrated lubrication system.",
+      software: ["CATIA V5", "SolidWorks"],
+      category: "Mechanical Systems",
+      image: 'public/images/engineassembly.jpg',
+      modelUrl: "/detail/1", // Would contain actual .obj file path
+    }
   ];
 
   const categories = ["All", "Mechanical Systems", "Fluid Systems", "Automotive", "Robotics", "Thermal Systems", "Manufacturing"];
@@ -101,10 +72,14 @@ const Portfolio = () => {
                   <CardContent className="p-0">
                     {/* 3D Model Viewer */}
                     <div className="relative">
-                      <PlaceholderModel 
+                      <center>
+                      <img height={300} src={project.image} />
+                      </center>
+                      {/* <Image width='300px' height='300px' src={project.image} /> */}
+                      {/* <PlaceholderModel 
                         title={project.title}
                         description="Interactive 3D model - Click and drag to rotate, scroll to zoom"
-                      />
+                      /> */}
                     </div>
                     
                     {/* Project Details */}
@@ -128,6 +103,9 @@ const Portfolio = () => {
                             {software}
                           </Badge>
                         ))}
+                      </div>
+                      <div className="flex flex-wrap mt-10">
+                        <Link className="btn bg-blue-500 rounded p-5 text-white w-full text-center" to={project.modelUrl}>View in 3D</Link>
                       </div>
                     </div>
                   </CardContent>
