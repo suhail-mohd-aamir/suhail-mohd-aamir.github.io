@@ -36,15 +36,26 @@ jobs:
       - name: Build project
         run: |
           DISABLE_ESLINT_PLUGIN=true npm run build
-          ls -la build/
-          
+          # detect output directory and expose it to later steps
+          if [ -d build ]; then
+            echo "OUTPUT=build" >> $GITHUB_ENV
+            ls -la build/
+          elif [ -d dist ]; then
+            echo "OUTPUT=dist" >> $GITHUB_ENV
+            ls -la dist/
+          else
+            echo "No build output found (neither build/ nor dist/)."
+            echo "Contents of repo:"
+            ls -la
+            exit 1
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: ${{ env.OUTPUT }}
           
       - name: Deploy to GitHub Pages
         id: deployment
