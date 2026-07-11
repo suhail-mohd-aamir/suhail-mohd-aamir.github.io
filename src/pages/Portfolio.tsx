@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import StlViewer from "@/components/StlViewer";
 
 const Portfolio = () => {
   const projects = [
@@ -8,8 +9,8 @@ const Portfolio = () => {
       id: 1,
       title: "Disk Brake",
       description: "A detailed disk-brake component modeled for accurate geometry, fit, and manufacturability.",
-      software: ["CATIA V5", "Anyses"],
-      category: "Mechanical Part",
+      software: ["CATIA V5", "ANSYS"],
+      category: "Assembly",
       image: '/images/diskbrake.jpg',
       modelUrl: "/detail/3", // Would contain actual .obj file path
     },
@@ -17,7 +18,7 @@ const Portfolio = () => {
       id: 2,
       title: "4 Cylinder Engine",
       description: "A complete four-cylinder engine assembly demonstrating component integration, packaging, and mechanical design.",
-      software: ["CATIA V5", "Anyses"],
+      software: ["CATIA V5", "ANSYS"],
       category: "Assembly",
       image: '/images/engineassembly.jpg',
       modelUrl: "/detail/1", // Would contain actual .obj file path
@@ -26,10 +27,49 @@ const Portfolio = () => {
       id: 3,
       title: "Screw Jack Assembly",
       description: "A screw-jack assembly designed to demonstrate mechanical motion, load transfer, and part integration.",
-      software: ["CATIA V5", "Anyses"],
+      software: ["CATIA V5", "ANSYS"],
       category: "Assembly",
       image: '/images/Screwjack.jpg',
       modelUrl: "/detail/4", // Would contain actual .obj file path
+    },
+    {
+      id: 5,
+      title: "Suspension Spring",
+      description: "A detailed suspension spring model demonstrating the geometry of a load-bearing automotive suspension component.",
+      software: ["FreeCAD"],
+      category: "Mechanical Part",
+      modelUrl: "/detail/6",
+      model: "/models/Suspension_springoo.stl",
+      color: "#dc2626",
+    },
+    {
+      id: 6,
+      title: "Flange Part",
+      description: "A precision flange component with a central bore and mounting-hole pattern designed for secure mechanical connections.",
+      software: ["FreeCAD"],
+      category: "Mechanical Part",
+      modelUrl: "/detail/5",
+      model: "/models/flange_part.stl",
+    },
+    {
+      id: 7,
+      title: "Vacuum Part",
+      description: "A detailed vacuum-system component modeled for mechanical fit, functional geometry, and manufacturing visualization.",
+      software: ["FreeCAD"],
+      category: "Mechanical Part",
+      modelUrl: "/detail/7",
+      model: "/models/vaccum.stl",
+      color: "#16a34a",
+    },
+    {
+      id: 8,
+      title: "Helical Gear",
+      description: "A precision helical gear featuring angled teeth for smooth power transmission, reduced noise, and improved load distribution.",
+      software: ["FreeCAD"],
+      category: "Mechanical Part",
+      modelUrl: "/detail/8",
+      model: "/models/Helical%20Gear.stl",
+      color: "#92400e",
     }
   ];
 
@@ -45,7 +85,7 @@ const Portfolio = () => {
               <span className="hero-text">3D Portfolio</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Interactive 3D models showcasing mechanical design expertise across various industries
+              Interactive CAD models showcasing mechanical design, product development, and manufacturing-focused engineering.
             </p>
           </div>
         </div>
@@ -67,11 +107,21 @@ const Portfolio = () => {
                   <CardContent className="p-0">
                     {/* 3D Model Viewer */}
                     <div className="relative">
-                      {project.image ? (
+                      {project.model?.toLowerCase().endsWith(".stl") ? (
+                        <StlViewer path={project.model} height="300px" color={project.color} />
+                      ) : project.image ? (
                         <div className="flex justify-center">
                           <img height={300} src={project.image} alt={`${project.title} preview`} />
                         </div>
-                      ) : null}
+                      ) : (
+                        <div className="h-[300px] flex items-center justify-center bg-gradient-to-br from-muted to-muted/40">
+                          <div className="text-center">
+                            <div className="mx-auto mb-4 h-24 w-24 rounded-full border-[14px] border-primary/30 shadow-inner" />
+                            <p className="font-medium text-foreground">{project.title} 3D Model</p>
+                            <p className="text-sm text-muted-foreground">Open the interactive model below</p>
+                          </div>
+                        </div>
+                      )}
                       <p className="text-muted-foreground text-center mt-2">Mohd Aamir Suhail • Interactive 3D Model • Click and drag to rotate • Scroll to zoom</p>
                       {/* <Image width='300px' height='300px' src={project.image} /> */}
                       {/* <PlaceholderModel 

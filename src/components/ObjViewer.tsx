@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Bounds, OrbitControls } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three-stdlib";
 import * as THREE from "three";
@@ -19,7 +19,7 @@ function Model({ path }: {path: string}) {
     }
   });
 
-  return <primitive object={obj} scale={0.2} />;
+  return <primitive object={obj} />;
 }
 
 export default function ObjViewer({ path }: ObjViewerProps) {
@@ -29,7 +29,9 @@ export default function ObjViewer({ path }: ObjViewerProps) {
       <ambientLight intensity={1.5} />
       <directionalLight position={[5, 5, 5]} />
       <Suspense fallback={null}>
-        <Model path={path} />
+        <Bounds fit clip observe margin={1.2}>
+          <Model path={path} />
+        </Bounds>
       </Suspense>
       <OrbitControls />
     </Canvas>

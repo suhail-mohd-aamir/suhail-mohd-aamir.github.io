@@ -5,9 +5,11 @@ import * as THREE from "three";
 
 type GlbViewerProps = {
     path: string;
+    height?: string;
+    color?: string;
 }
 
-function Model({ path }: {path: string}) {
+function Model({ path, color }: { path: string; color?: string }) {
   useGLTF.preload(path);
   const { scene } = useGLTF(path) as any;
   // compute bounding box and automatically scale & center the model
@@ -29,6 +31,17 @@ function Model({ path }: {path: string}) {
     if (child.isMesh && !child.material) {
       child.material = new THREE.MeshStandardMaterial({ color: "lightblue" });
     }
+    if (child.isMesh && color) {
+      const materials = Array.isArray(child.material) ? child.material : [child.material];
+      const coloredMaterials = materials.map((material: THREE.Material) => {
+        const coloredMaterial = material.clone() as THREE.MeshStandardMaterial;
+        coloredMaterial.color?.set(color);
+        coloredMaterial.metalness = 0.55;
+        coloredMaterial.roughness = 0.35;
+        return coloredMaterial;
+      });
+      child.material = Array.isArray(child.material) ? coloredMaterials : coloredMaterials[0];
+    }
     child.castShadow = true;
     child.receiveShadow = true;
   });
@@ -36,19 +49,19 @@ function Model({ path }: {path: string}) {
   return <primitive object={scene} />;
 }
 
-export default function GlbViewer({ path }: GlbViewerProps) {
+export default function GlbViewer({ path, height = "60vh", color }: GlbViewerProps) {
     if (!path) return <div>No GLB path provided.</div>;
     
     return (
         <Canvas 
         shadows
         camera={{ position: [10, 10, 10], fov: 50 }}
-        style={{ width: "100%", height: "60vh" }}>
+        style={{ width: "100%", height }}>
             <ambientLight intensity={0.6} />
             <hemisphereLight intensity={0.35} />
             <directionalLight position={[5, 5, 5]} />
             <Suspense fallback={null}>
-                <Model path={path} />
+                <Model path={path} color={color} />
             </Suspense>
             <OrbitControls />
         </Canvas>

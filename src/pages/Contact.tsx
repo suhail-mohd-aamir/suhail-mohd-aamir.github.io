@@ -32,7 +32,7 @@ const Contact = () => {
       icon: Mail,
       label: "Email",
       value: "aamir.ms.suhail@fau.de",
-      href: "mailto:aamir.ms.suhail@fau.de.com"
+      href: "mailto:aamir.ms.suhail@fau.de"
     },
     {
       icon: Phone,
@@ -52,19 +52,19 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "http://linkedin.com/in/mohd-aamir-suhail",
+      href: "https://www.linkedin.com/in/mohd-aamir-suhail/",
       color: "hover:text-blue-600"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://https://github.com/suhail-mohd-aamir",
+      href: "https://github.com/suhail-mohd-aamir",
       color: "hover:text-gray-900"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:aamir.ms.suhai@fau.de",
+      href: "mailto:aamir.ms.suhail@fau.de",
       color: "hover:text-red-600"
     }
   ];

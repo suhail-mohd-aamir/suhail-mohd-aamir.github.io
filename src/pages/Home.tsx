@@ -30,7 +30,7 @@ const Home = () => {
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
                 
-                AI mechanical engineering and CAD automation | Building intelligent design systems| Specializing in electromobility, ,Artificial Intelligence and sustainable manufacturing
+                Mechanical engineer focused on AI-driven design, product development, CAD automation, and sustainable manufacturing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="btn-glow shadow-glow">
@@ -62,13 +62,13 @@ const Home = () => {
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                "Catia V5",
+                "CATIA V5",
                 "Siemens NX",
-                "Anyses",
-                "SolidWork",
-                "freecad",
-                "CFD",
-                "Abaqus",
+                "AutoCAD",
+                "FreeCAD",
+                "Artificial Intelligence",
+                "Life Cycle Assessment",
+                "Sustainable Manufacturing",
               ].map((skill) => (
                 <div
                   key={skill}
