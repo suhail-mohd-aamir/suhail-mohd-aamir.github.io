@@ -152,6 +152,43 @@ All colors MUST be HSL.
     @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
   }
 
+  .hero-3d-name {
+    perspective: 1500px;
+  }
+
+  .hero-name-3d {
+    display: inline-block;
+    transform-style: preserve-3d;
+    animation: rotate-3d 12s ease-in-out infinite;
+    background: linear-gradient(135deg, #32d6ff, #6d8bff, #4cd7b0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow:
+      0 0 12px rgba(77, 180, 255, 0.35),
+      0 0 24px rgba(77, 180, 255, 0.15);
+  }
+
+  .hero-3d-name h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  @keyframes rotate-3d {
+    0%, 100% {
+      transform: rotateX(0deg) rotateY(0deg) translateZ(0px);
+    }
+    25% {
+      transform: rotateX(8deg) rotateY(10deg) translateZ(6px);
+    }
+    50% {
+      transform: rotateX(-6deg) rotateY(-12deg) translateZ(4px);
+    }
+    75% {
+      transform: rotateX(6deg) rotateY(12deg) translateZ(2px);
+    }
+  }
+
   /* Card Hover Effects */
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;

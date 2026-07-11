@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useMemo } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Html } from "@react-three/drei";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
@@ -17,6 +17,11 @@ const Model = ({ url }: ModelProps) => {
   useFrame((state, delta) => {
     if (mesh.current) {
       mesh.current.rotation.y += delta * 0.5;
+      // gentle floating motion for 'space' effect
+      const t = state.clock.elapsedTime;
+      mesh.current.position.y = Math.sin(t * 0.6) * 0.35;
+      mesh.current.position.x = Math.cos(t * 0.3) * 0.25;
+      mesh.current.position.z = Math.sin(t * 0.4) * 0.15;
     }
   });
 
@@ -37,6 +42,41 @@ const Model = ({ url }: ModelProps) => {
     <group ref={mesh}>
       <primitive object={obj} scale={2} />
     </group>
+  );
+};
+
+// Simple starfield using points
+const Stars = ({ count = 600 }: { count?: number }) => {
+  const ref = useRef<THREE.Points>(null);
+  const positions = useMemo(() => {
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const r = 8 + Math.random() * 40;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      arr[i * 3 + 0] = Math.sin(phi) * Math.cos(theta) * r;
+      arr[i * 3 + 1] = Math.sin(phi) * Math.sin(theta) * r;
+      arr[i * 3 + 2] = Math.cos(phi) * r;
+    }
+    return arr;
+  }, [count]);
+
+  useFrame((state, delta) => {
+    if (ref.current) ref.current.rotation.y += delta * 0.01;
+  });
+
+  return (
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          array={positions}
+          count={positions.length / 3}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial color={0xffffff} size={0.06} sizeAttenuation transparent opacity={0.8} />
+    </points>
   );
 };
 
@@ -82,10 +122,11 @@ const ModelViewer = ({ modelUrl, title, description }: ModelViewerProps) => {
   return (
     <div className="model-viewer h-96 w-full">
       {/* 3D Canvas */}
-      <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-        <ambientLight intensity={0.4} />
+      <Canvas gl={{ antialias: true, alpha: true }} style={{ background: 'transparent' }} camera={{ position: [0, 0, 5], fov: 50 }}>
+        <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <directionalLight position={[-10, -10, -5]} intensity={0.5} />
+        <Stars count={650} />
         
         <Suspense fallback={<LoadingSpinner />}>
           <Model url={modelUrl} />

@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { PlaceholderModel } from "@/components/ModelViewer";
 import { Link } from "react-router-dom";
 
 const Portfolio = () => {
@@ -8,24 +7,33 @@ const Portfolio = () => {
     {
       id: 1,
       title: "Disk Brake",
-      description: "Multi-stage planetary gearbox designed for high-torque industrial applications. Features optimized gear ratios and integrated lubrication system.",
-      software: ["CATIA V5", "SolidWorks"],
-      category: "Mechanical Systems",
-      image: 'public/images/diskbrake.jpg',
+      description: "A detailed disk-brake component modeled for accurate geometry, fit, and manufacturability.",
+      software: ["CATIA V5", "Anyses"],
+      category: "Mechanical Part",
+      image: '/images/diskbrake.jpg',
       modelUrl: "/detail/3", // Would contain actual .obj file path
     },
     {
       id: 2,
       title: "4 Cylinder Engine",
-      description: "Multi-stage planetary gearbox designed for high-torque industrial applications. Features optimized gear ratios and integrated lubrication system.",
-      software: ["CATIA V5", "SolidWorks"],
-      category: "Mechanical Systems",
-      image: 'public/images/engineassembly.jpg',
+      description: "A complete four-cylinder engine assembly demonstrating component integration, packaging, and mechanical design.",
+      software: ["CATIA V5", "Anyses"],
+      category: "Assembly",
+      image: '/images/engineassembly.jpg',
       modelUrl: "/detail/1", // Would contain actual .obj file path
+    },
+    {
+      id: 3,
+      title: "Screw Jack Assembly",
+      description: "A screw-jack assembly designed to demonstrate mechanical motion, load transfer, and part integration.",
+      software: ["CATIA V5", "Anyses"],
+      category: "Assembly",
+      image: '/images/Screwjack.jpg',
+      modelUrl: "/detail/4", // Would contain actual .obj file path
     }
   ];
 
-  const categories = ["All", "Mechanical Systems", "Fluid Systems", "Automotive", "Robotics", "Thermal Systems", "Manufacturing"];
+  const sections = ["Assembly", "Mechanical Part"];
 
   return (
     <div className="min-h-screen pt-20">
@@ -43,42 +51,32 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      {/* Mechanical Design Sections */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map((category) => (
-                <Badge
-                  key={category}
-                  variant={category === "All" ? "default" : "secondary"}
-                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-2"
-                >
-                  {category}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {projects.map((project) => (
+          <div className="max-w-7xl mx-auto space-y-16">
+            {sections.map((section) => (
+              <div key={section}>
+                <div className="mb-8 text-center">
+                  <Badge variant="secondary" className="mb-3 px-4 py-2">Mechanical Design</Badge>
+                  <h2 className="text-3xl font-bold hero-text">{section}</h2>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {projects.filter((project) => project.category === section).map((project) => (
                 <Card key={project.id} className="card-hover overflow-hidden">
                   <CardContent className="p-0">
                     {/* 3D Model Viewer */}
                     <div className="relative">
-                      <center>
-                      <img height={300} src={project.image} />
-                      </center>
+                      {project.image ? (
+                        <div className="flex justify-center">
+                          <img height={300} src={project.image} alt={`${project.title} preview`} />
+                        </div>
+                      ) : null}
+                      <p className="text-muted-foreground text-center mt-2">Mohd Aamir Suhail • Interactive 3D Model • Click and drag to rotate • Scroll to zoom</p>
                       {/* <Image width='300px' height='300px' src={project.image} /> */}
                       {/* <PlaceholderModel 
                         title={project.title}
-                        description="Interactive 3D model - Click and drag to rotate, scroll to zoom"
+                        description="Mohd Aamir Suhail • Interactive 3D Model • Click and drag to rotate • Scroll to zoom"
                       /> */}
                     </div>
                     
@@ -111,9 +109,11 @@ const Portfolio = () => {
                   </CardContent>
                 </Card>
               ))}
+                </div>
+              </div>
+            ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* Instructions Section */}

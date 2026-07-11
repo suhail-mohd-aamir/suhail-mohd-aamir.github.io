@@ -6,7 +6,8 @@ import { useParams, Link } from "react-router-dom";
 export const items = [
   { id: 1, title: "Engine Assembly", description: "A nice 3D car", model: "/models/engineassembly.glb" },
   { id: 2, title: "House Model", description: "3D house structure", model: "/models/RadialAssembly.obj" },
-  { id: 3, title: "Disk Brake", description: "3D house structure", model: "/models/diskbrake.glb" }
+  { id: 3, title: "Disk Brake", description: "3D house structure", model: "/models/diskbrake.glb" },
+  { id: 4, title: "Screw jack", description: "3D house structure", model: "/models/Screwjackassembly.glb" }
 ];
 
 function DetailPage() {

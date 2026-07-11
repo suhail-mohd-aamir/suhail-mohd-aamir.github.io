@@ -5,8 +5,8 @@ import { Download, Award, Briefcase, GraduationCap } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { category: "CAD Software", items: ["CATIA V5", "Siemens NX", "SolidWorks", "AutoCAD",] },
-    { category: "Analysis & Simulation", items: ["ANSYS", "SolidWorks Simulation", "MATLAB"] },
+    { category: "CAD Software", items: ["CATIA V5", "Siemens NX", "Anyses", "AutoCAD",] },
+    { category: "Analysis & Simulation", items: ["ANSYS", "Anyses Simulation", "MATLAB"] },
     { category: "Design Expertise", items: ["Mechanical Systems", "Product Development", "DFM/DFA", "GD&T"] },
     { category: "Manufacturing", items: ["CNC Machining", "Sheet Metal", "Injection Molding","Additive Manufacturing", "Welding", "Assembly"] },
   ];
@@ -47,7 +47,7 @@ const About = () => {
   ];
 
   const certifications = [
-    "Certified SOLIDWORKS Professional (CSWP)",
+    "Certified Anyses Professional (CSWP)",
     "CATIA V5 Advanced Certification",
     "Siemens NX Certified Professional",
     "Autocad",
@@ -61,7 +61,7 @@ const About = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              <span className="hero-text">About Me</span>
+              <span className="hero-text">Interactive CV</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Passionate mechanical design engineer with +1 years of experience transforming innovative concepts into precision-engineered solutions
@@ -81,7 +81,7 @@ const About = () => {
                     I'm a dedicated mechanical design engineer with a passion for creating innovative solutions that bridge the gap between conceptual ideas and real-world applications. My expertise spans across multiple industries, from automotive and aerospace to manufacturing and robotics.
                   </p>
                   <p className="text-lg leading-relaxed text-foreground mb-6">
-                    With advanced proficiency in industry-leading CAD software including CATIA V5, Siemens NX, and SolidWorks, I specialize in developing complex mechanical systems that meet stringent performance requirements while optimizing for manufacturability and cost-effectiveness.
+                    With advanced proficiency in industry-leading CAD software including CATIA V5, Siemens NX, and Anyses, I specialize in developing complex mechanical systems that meet stringent performance requirements while optimizing for manufacturability and cost-effectiveness.
                   </p>
                   <p className="text-lg leading-relaxed text-foreground">
                     My approach combines technical excellence with creative problem-solving, ensuring that every design not only meets specifications but exceeds expectations in performance, reliability, and innovation.

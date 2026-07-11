@@ -147,65 +147,12 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                {/* Response Time */}
-                <Card className="card-hover">
-                  <CardContent className="p-8">
-                    <h2 className="text-2xl font-bold mb-4 text-foreground">Response Time</h2>
-                    <p className="text-muted-foreground leading-relaxed">
-                      I am always open to professional opportunities and typically reply within a day during the weeks and I’m also available via LinkedIn for quick communication.
-                    </p>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              <span className="hero-text">Frequently Asked Questions</span>
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-2">What types of projects do you work on?</h3>
-                  <p className="text-muted-foreground text-sm">
-                    I specialize in mechanical design across various industries including automotive, aerospace, manufacturing, and robotics. From concept development to production-ready designs.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-2">What software do you use?</h3>
-                  <p className="text-muted-foreground text-sm">
-                    I'm proficient in CATIA V5, Siemens NX, SolidWorks, and other industry-standard CAD software, plus simulation tools like ANSYS and ABAQUS.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-2">Do you provide manufacturing support?</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Yes, I design with manufacturability in mind and can provide DFM analysis, technical drawings, and support throughout the production process.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-2">What's your typical project timeline?</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Project timelines vary based on complexity, but typical mechanical designs range from 2-8 weeks. I'll provide a detailed timeline during our initial consultation.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
