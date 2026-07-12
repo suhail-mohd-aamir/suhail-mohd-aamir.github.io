@@ -50,7 +50,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/5",
       model: "/models/flange_part.stl",
-      image: "/images/flange-part.svg",
+      image: "/models/Screenshot%202026-07-12%20122814.png",
     },
     {
       id: 7,
