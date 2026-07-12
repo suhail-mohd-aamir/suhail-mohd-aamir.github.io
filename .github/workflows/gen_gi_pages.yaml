@@ -12,7 +12,9 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  # A new push should replace an older deployment instead of failing while
+  # GitHub Pages still considers that deployment active.
+  cancel-in-progress: true
 
 jobs:
   build-deploy:
@@ -27,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '24'
           cache: 'npm'
           
       - name: Install dependencies
