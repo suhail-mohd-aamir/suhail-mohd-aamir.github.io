@@ -11,7 +11,7 @@ type GlbViewerProps = {
 
 function Model({ path, color }: { path: string; color?: string }) {
   useGLTF.preload(path);
-  const { scene } = useGLTF(path) as any;
+  const { scene } = useGLTF(path);
   // compute bounding box and automatically scale & center the model
   const box = new THREE.Box3().setFromObject(scene);
   const size = new THREE.Vector3();
@@ -27,8 +27,10 @@ function Model({ path, color }: { path: string; color?: string }) {
   scene.position.sub(center).multiplyScalar(scaleFactor);
 
   // Add default material if missing
-  scene.traverse((child: any) => {
-    if (child.isMesh && !child.material) {
+  scene.traverse((child) => {
+    if (!(child instanceof THREE.Mesh)) return;
+
+    if (!child.material) {
       child.material = new THREE.MeshStandardMaterial({ color: "lightblue" });
     }
     if (child.isMesh && color) {

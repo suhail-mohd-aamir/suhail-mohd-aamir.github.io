@@ -1,7 +1,8 @@
 import { Suspense, useRef, useState, useMemo } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Html } from "@react-three/drei";
+import { OrbitControls, Html } from "@react-three/drei";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Button } from "@/components/ui/button";
 import { RotateCcw, ZoomIn, ZoomOut, Loader2 } from "lucide-react";
 import * as THREE from "three";
@@ -96,7 +97,7 @@ interface ModelViewerProps {
 }
 
 const ModelViewer = ({ modelUrl, title, description }: ModelViewerProps) => {
-  const controlsRef = useRef<any>();
+  const controlsRef = useRef<OrbitControlsImpl>(null);
   const [isAutoRotate, setIsAutoRotate] = useState(true);
 
   const handleReset = () => {

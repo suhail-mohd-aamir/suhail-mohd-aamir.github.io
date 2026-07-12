@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Vacuum component preview</title>
+  <desc id="desc">Technical illustration of a green vacuum-system component.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172338"/><stop offset="1" stop-color="#2c3f5d"/></linearGradient><linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#86efac"/><stop offset=".45" stop-color="#16a34a"/><stop offset="1" stop-color="#14532d"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g stroke="#bbf7d0" stroke-width="7"><path d="M235 330 L275 155 Q285 115 325 110 H475 Q515 115 525 155 L565 330 Z" fill="url(#body)"/><ellipse cx="400" cy="330" rx="180" ry="60" fill="#14532d"/><ellipse cx="400" cy="315" rx="180" ry="60" fill="url(#body)"/><ellipse cx="400" cy="315" rx="62" ry="24" fill="#052e16"/><rect x="360" y="55" width="80" height="85" rx="20" fill="url(#body)"/><path d="M440 85 H555 Q580 85 580 110 V135" fill="none" stroke-linecap="round"/></g>
+  <text x="400" y="475" fill="#dbeafe" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">VACUUM COMPONENT</text>
+</svg>

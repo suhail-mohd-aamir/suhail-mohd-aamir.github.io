@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import StlViewer from "@/components/StlViewer";
 
 const Portfolio = () => {
   const projects = [
@@ -40,6 +39,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/6",
       model: "/models/Suspension_springoo.stl",
+      image: "/images/suspension-spring.svg",
       color: "#dc2626",
     },
     {
@@ -50,6 +50,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/5",
       model: "/models/flange_part.stl",
+      image: "/images/flange-part.svg",
     },
     {
       id: 7,
@@ -59,6 +60,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/7",
       model: "/models/vaccum.stl",
+      image: "/images/vacuum-part.svg",
       color: "#16a34a",
     },
     {
@@ -69,6 +71,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/8",
       model: "/models/Helical%20Gear.stl",
+      image: "/images/helical-gear.svg",
       color: "#92400e",
     }
   ];
@@ -107,9 +110,7 @@ const Portfolio = () => {
                   <CardContent className="p-0">
                     {/* 3D Model Viewer */}
                     <div className="relative">
-                      {project.model?.toLowerCase().endsWith(".stl") ? (
-                        <StlViewer path={project.model} height="300px" color={project.color} />
-                      ) : project.image ? (
+                      {project.image ? (
                         <div className="flex justify-center">
                           <img
                             className="h-[300px] w-full object-contain"

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Suspension spring preview</title>
+  <desc id="desc">Technical illustration of a red coil spring.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172338"/><stop offset="1" stop-color="#2c3f5d"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7f1d1d"/><stop offset=".45" stop-color="#ef4444"/><stop offset=".7" stop-color="#991b1b"/><stop offset="1" stop-color="#450a0a"/></linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#metal)" stroke-width="30" stroke-linecap="round">
+    <path d="M250 95 C250 50 550 50 550 95 S250 140 250 185 S550 230 550 275 S250 320 250 365 S550 410 550 455"/>
+  </g>
+  <g fill="none" stroke="#fca5a5" stroke-width="5" opacity=".55"><path d="M273 81 C337 57 463 57 527 81"/><path d="M273 171 C337 147 463 147 527 171"/></g>
+  <text x="400" y="475" fill="#dbeafe" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">SUSPENSION SPRING</text>
+</svg>
