@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import StlViewer from "@/components/StlViewer";
+import { Box } from "lucide-react";
 
 const Portfolio = () => {
   const projects = [
@@ -107,16 +107,19 @@ const Portfolio = () => {
                   <CardContent className="p-0">
                     {/* 3D Model Viewer */}
                     <div className="relative">
-                      {project.model?.toLowerCase().endsWith(".stl") ? (
-                        <StlViewer path={project.model} height="300px" color={project.color} />
-                      ) : project.image ? (
+                      {project.image ? (
                         <div className="flex justify-center">
-                          <img height={300} src={project.image} alt={`${project.title} preview`} />
+                          <img
+                            className="h-[300px] w-full object-contain"
+                            src={project.image}
+                            alt={`${project.title} preview`}
+                            loading="lazy"
+                          />
                         </div>
                       ) : (
                         <div className="h-[300px] flex items-center justify-center bg-gradient-to-br from-muted to-muted/40">
                           <div className="text-center">
-                            <div className="mx-auto mb-4 h-24 w-24 rounded-full border-[14px] border-primary/30 shadow-inner" />
+                            <Box className="mx-auto mb-4 h-24 w-24 text-primary/50" strokeWidth={1.25} />
                             <p className="font-medium text-foreground">{project.title} 3D Model</p>
                             <p className="text-sm text-muted-foreground">Open the interactive model below</p>
                           </div>
