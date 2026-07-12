@@ -39,7 +39,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/6",
       model: "/models/Suspension_springoo.stl",
-      image: "/images/suspension-spring.svg",
+      image: "/models/Suspension%20Spring.png",
       color: "#dc2626",
     },
     {
@@ -60,7 +60,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/7",
       model: "/models/vaccum.stl",
-      image: "/images/vacuum-part.svg",
+      image: "/models/Vaccum.png",
       color: "#16a34a",
     },
     {
@@ -71,7 +71,7 @@ const Portfolio = () => {
       category: "Mechanical Part",
       modelUrl: "/detail/8",
       model: "/models/Helical%20Gear.stl",
-      image: "/images/helical-gear.svg",
+      image: "/models/helical%20gear.png",
       color: "#92400e",
     }
   ];
